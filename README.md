@@ -19,7 +19,7 @@
         1.2.2 Находим строку нчинающеюся с linux16 и дописываем в конце rd.break
         1.2.3 Нажимаем Ctr+x, загружаемся...
         1.2.4 Монтируем файловую систему в режиме Read-Write # mount -o remount, rw /sysroot
-        1.2.5 Представим директории sysroot в качестве корня # chroot /sysroot
+        1.2.5 Представим директорию sysroot в качестве корня # chroot /sysroot
         1.2.6 Далее можно поменять пароль root # passwd root
         1.2.7 Включаем переименование /etc/shadow файла SELinux # touch /.autorelabel
 
