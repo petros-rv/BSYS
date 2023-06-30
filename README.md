@@ -42,8 +42,8 @@
         
         Volume group "centos" successfully renamed to "OtusRoot"
         
-        2.3 Сделаем правки в файлах # sed -i 's/centos/OtusRoot/g' {/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg, /etc/grub.d/*}
-        2.4 Пересоздаем initrd image, чтобы он знал новое назвние Volume Group # mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+####    2.3 Сделаем правки в файлах # sed -i 's/centos/OtusRoot/g' {/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg, /etc/grub.d/*}
+####    2.4 Пересоздаем initrd image, чтобы он знал новое назвние Volume Group # mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
 
 
         
