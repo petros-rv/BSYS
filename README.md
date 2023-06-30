@@ -33,16 +33,18 @@
  
 ### 2.  В системе с LVM переименовать VG
         
-####    2.1 Проверяем состояние системы # vgs
-        
+####    2.1 Проверяем состояние системы # 
+
+         vgs
          VG     #PV #LV #SN Attr   VSize   VFree
          centos   1   2   0 wz--n- <29.00g 4.00m
         
-####    2.2 Переименуем VG # vgrename centos OtusRoot
-        
+####    2.2 Переименуем VG 
+     
+        vgrename centos OtusRoot
         Volume group "centos" successfully renamed to "OtusRoot"
         
-####    2.3 Сделаем правки в файлах#
+####    2.3 Сделаем правки в файлах
 
         sed -i 's/centos/OtusRoot/g' {/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg, /etc/grub.d/*}
 
