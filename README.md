@@ -4,6 +4,8 @@
 2. В системе с LVM переименовать VG
 3. Добавить модуль в initrd
 
+Задание 2 и 3 сделано через Vagrantfile
+
 
 ### 1.  Попасть в систему без пароля несколькими способами
 
@@ -50,8 +52,19 @@
 
 ####    2.4 Пересоздаем initrd image, чтобы он знал новое назвние Volume Group #
         
-        mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+        mkinitrd -f /boot/initramfs-$(uname -r).img $(uname -r)
 
+### 3.  Добавить модуль в initrd
+
+####    3.1 Создаем папку с модулем и запишем туда файлы module-setup.sh и test.sh
+        
+        mkdir /usr/lib/dracut/modules.d/01test
+        cp {/tmp/module-setup.sh,/tmp/test.sh} /usr/lib/dracut/modules.d/01test # копируем файлы из папки tmp
+
+####    3.2 Перезапишем initramfs и правим grub
+
+         mkinitrd -f /boot/initramfs-$(uname -r).img $(uname -r)
+         sed -i 's/ rhgb quiet//' {/etc/default/grub,/boot/grub2/grub.cfg}
 
         
 
