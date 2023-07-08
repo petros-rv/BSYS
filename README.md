@@ -39,16 +39,16 @@
 
          vgs
          VG     #PV #LV #SN Attr   VSize   VFree
-         centos   1   2   0 wz--n- <29.00g 4.00m
+         VolGroup00   1   2   0 wz--n- <29.00g 4.00m
         
 ####    2.2 Переименуем VG 
      
-        vgrename centos OtusRoot
-        Volume group "centos" successfully renamed to "OtusRoot"
+        vgrename VolGroup00 OtusRoot
+        Volume group "VolGroup00" successfully renamed to "OtusRoot"
         
 ####    2.3 Сделаем правки в файлах
 
-        sed -i 's/centos/OtusRoot/g' {/etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg, /etc/grub.d/*}
+         sed -i 's/VolGroup00/OtusRoot/g' {/etc/fstab,/etc/default/grub,/boot/grub2/grub.cfg,/etc/grub.d/*}
 
 ####    2.4 Пересоздаем initrd image, чтобы он знал новое назвние Volume Group #
         
